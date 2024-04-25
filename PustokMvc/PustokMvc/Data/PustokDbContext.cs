@@ -16,5 +16,6 @@ namespace PustokMvc.Data
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Feature> Features { get; set; }
     }
 }

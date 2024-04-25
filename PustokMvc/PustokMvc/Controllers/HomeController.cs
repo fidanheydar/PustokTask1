@@ -18,6 +18,7 @@ namespace PustokMvc.Controllers
         {
             HomeViewModel vm = new HomeViewModel
             {
+                Features = _context.Features.ToList(),
                 Sliders = _context.Sliders.OrderBy(x => x.Order).ToList(),
                 FeaturedBooks = _context.Books.Include(x => x.Author).Include(x => x.BookImages.Where(bi => bi.Status != null)).Where(x => x.IsFeatured).Take(10).ToList(),
                 NewBooks = _context.Books.Include(x => x.Author).Include(x => x.BookImages.Where(bi => bi.Status != null)).Where(x => x.IsNew).Take(10).ToList(),
